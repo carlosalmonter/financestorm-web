@@ -33,6 +33,10 @@ class AccountCreate extends Component {
     accountType: config.DEFAULT_ACCOUNT_TYPE,
   };
 
+  /**
+   * Sets the name state when the input is changed
+   * @param {SyntheticEvent} event
+   */
   handleAccountNameInputChange = (event) => {
     this.setState({
       ...this.state,
@@ -40,6 +44,12 @@ class AccountCreate extends Component {
     });
   };
 
+  /**
+   * Sets the account type when the select is changed
+   * @param {SyntheticEvent} event
+   * @param {number} index
+   * @param {string} value
+   */
   handleAccountTypeChange = (event, index, value) => {
     this.setState({
       ...this.state,
@@ -47,6 +57,9 @@ class AccountCreate extends Component {
     });
   };
 
+  /**
+   * Submits the account creation
+   */
   handleAccountSubmit = () => {
     const { user, accessToken } = this.props;
     const { name, accountType } = this.state;

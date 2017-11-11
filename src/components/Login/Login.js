@@ -24,6 +24,10 @@ class Login extends Component {
     password: config.EMPTY_STRING,
   };
 
+  /**
+   * Sets the email state when the input is changed
+   * @param {SyntheticEvent} event
+   */
   handleEmailInputChanged = (event) => {
     this.setState(
       {
@@ -33,6 +37,10 @@ class Login extends Component {
     );
   };
 
+  /**
+   * Sets the password state when the input is changed
+   * @param {SyntheticEvent} event
+   */
   handlePasswordInputChanged = (event) => {
     this.setState(
       {
@@ -42,6 +50,9 @@ class Login extends Component {
     );
   };
 
+  /**
+   * Submits the login request
+   */
   handleSignInClick = () => {
     if (this.state.email && this.state.password) {
       this.props.loginUser(this.state.email, this.state.password);

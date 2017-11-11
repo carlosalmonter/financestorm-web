@@ -47,6 +47,10 @@ class TransactionCreate extends Component {
     }
   }
 
+  /**
+   * Sets the description state when the input is changed
+   * @param {SyntheticEvent} event
+   */
   handleDescriptionChange = (event) => {
     this.setState({
       ...this.state,
@@ -54,6 +58,12 @@ class TransactionCreate extends Component {
     });
   };
 
+  /**
+   * Sets the type state when the input is changed
+   * @param {SyntheticEvent} event
+   * @param {number} index
+   * @param {string} value
+   */
   handleTypeChange = (event, index, value) => {
     this.setState({
       ...this.state,
@@ -61,6 +71,12 @@ class TransactionCreate extends Component {
     });
   };
 
+  /**
+   * Sets the account id state when the input is changed
+   * @param {SyntheticEvent} event
+   * @param {number} index
+   * @param {string} value
+   */
   handleAccountChange = (event, index, value) => {
     this.setState({
       ...this.state,
@@ -68,6 +84,12 @@ class TransactionCreate extends Component {
     });
   };
 
+  /**
+   * Sets the tag id state when the input is changed
+   * @param {SyntheticEvent} event
+   * @param {number} index
+   * @param {string} value
+   */
   handleTagChange = (event, index, value) => {
     this.setState({
       ...this.state,
@@ -75,6 +97,10 @@ class TransactionCreate extends Component {
     });
   };
 
+  /**
+   * Sets the amount when the input is changed
+   * @param {SyntheticEvent} event
+   */
   handleAmountChange = (event) => {
     this.setState({
       ...this.state,
@@ -82,6 +108,11 @@ class TransactionCreate extends Component {
     });
   };
 
+  /**
+   * Sets the date state when the input is changed
+   * @param {SyntheticEvent} event
+   * @param {Date} date
+   */
   handleDateChange = (event, date) => {
     this.setState({
       ...this.state,
@@ -89,6 +120,9 @@ class TransactionCreate extends Component {
     });
   };
 
+  /**
+   * Submits the transaction create request
+   */
   handleTransactionSubmit = () => {
     const { user, accessToken } = this.props;
     const { description, transactionType, date, accountId, tagId, amount } = this.state;
