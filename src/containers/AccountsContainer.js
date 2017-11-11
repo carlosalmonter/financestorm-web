@@ -8,6 +8,8 @@ const mapStateToProps = ({ users, accounts }) => (
     user: users.user,
     accessToken: users.accessToken,
     accounts: accounts.accounts,
+    isLoading: accounts.isLoading,
+    isError: accounts.isError,
   }
 );
 const mapDispatchToProps = dispatch => ({

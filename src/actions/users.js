@@ -53,7 +53,6 @@ export const usersActions = {
       .then(data => dispatch(userLoginCompleted(data)))
       .catch((err) => {
         dispatch(userLoginFailed(err));
-        throw err;
       });
   },
   logoutUser(dispatch) {
@@ -66,7 +65,6 @@ export const usersActions = {
       .then(data => dispatch(userRegisterCompleted(data)))
       .catch((err) => {
         dispatch(userRegisterFailed(err));
-        throw err;
       });
   },
 };

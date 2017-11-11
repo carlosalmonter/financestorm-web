@@ -1,0 +1,12 @@
+.home {
+    margin-top: 20%;
+    text-align: center;
+}
+
+.home__container {
+    display: inline-block;
+}
+
+.home__container span{
+    margin: 10px;
+}

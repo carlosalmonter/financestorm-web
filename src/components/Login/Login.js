@@ -7,12 +7,16 @@ import './Login.css';
 
 class Login extends Component {
   static defaultProps = {
+    isError: false,
+    error: config.EMPTY_STRING,
     accessToken: config.EMPTY_STRING,
   };
 
   static propTypes = {
     accessToken: PropTypes.string,
     loginUser: PropTypes.func.isRequired,
+    isError: PropTypes.bool,
+    error: PropTypes.string,
   };
 
   state={
@@ -39,11 +43,13 @@ class Login extends Component {
   };
 
   handleSignInClick = () => {
-    this.props.loginUser(this.state.email, this.state.password);
+    if (this.state.email && this.state.password) {
+      this.props.loginUser(this.state.email, this.state.password);
+    }
   };
 
   render() {
-    const { accessToken } = this.props;
+    const { accessToken, isError, error } = this.props;
     return (
       <div className="login">
         <div className="login__container">
@@ -69,6 +75,7 @@ class Login extends Component {
               />
             </div>
             { accessToken && <Redirect to="/dashboard" /> }
+            { isError && <div className="login--error">{error}</div> }
           </Paper>
         </div>
       </div>

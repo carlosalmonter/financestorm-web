@@ -16,8 +16,11 @@ const config = {
       textColor: colors.LIGHT_GRAY,
     },
   },
+  SUCCESS_CODE: 200,
   EMPTY_STRING: '',
   LOADING_ERROR_MESSAGE: 'There was an error loading the data!',
+  SIGN_IN_BUTTON_TEXT: 'Sign in',
+  REGISTER_IN_BUTTON_TEXT: 'Register',
 };
 
 export default config;

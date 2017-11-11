@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
 import config from '../../config/config';
+import { RaisedButton } from "material-ui";
+import './Home.css';
 
 class Home extends Component {
   static defaultProps = {
@@ -15,11 +17,11 @@ class Home extends Component {
   render() {
     const { accessToken } = this.props;
     return (
-      <div className="home__container">
+      <div className="home">
         { accessToken && <Redirect to="/dashboard" /> }
-        <div>
-          <span><Link to={'/login'}>Login</Link></span>
-          <span><Link to={'/register'}>Register</Link></span>
+        <div className="home__container">
+          <span><Link to={'/login'}><RaisedButton label={config.SIGN_IN_BUTTON_TEXT}/></Link></span>
+          <span><Link to={'/register'}><RaisedButton label={config.REGISTER_IN_BUTTON_TEXT}/></Link></span>
         </div>
       </div>
     );

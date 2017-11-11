@@ -2,22 +2,29 @@ import config from '../config/config';
 
 const apiUrl = config.API_URL;
 
-const post = (uri, params) => fetch(`${apiUrl}${uri}`, {
+const wrappedFetch = (uri, options) => {
+  return fetch(uri, options)
+    .then(response => {
+      if (response.status !== config.SUCCESS_CODE) {
+        return response.json().then(data => { throw data });
+      }
+      return response.json();
+    })
+    .then(data => data);
+};
+
+const post = (uri, params) => wrappedFetch(`${apiUrl}${uri}`, {
   method: 'post',
   headers: config.POST_HEADERS,
   body: JSON.stringify(params),
-})
-  .then(response => response.json())
-  .then(data => data);
+});
 
-const get = (uri, accessToken) => fetch(`${apiUrl}${uri}`, {
+const get = (uri, accessToken) => wrappedFetch(`${apiUrl}${uri}`, {
   headers: {
     ...config.POST_HEADERS,
     Authorization: `Bearer ${accessToken}`,
   },
-})
-  .then(response => response.json())
-  .then(data => data);
+});
 
 export const login = (email, password) => post('authorize', {
   email,

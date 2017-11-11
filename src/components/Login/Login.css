@@ -7,3 +7,7 @@
     display: inline-block;
     width: 400px;
 }
+
+.login--error {
+    color: crimson;
+}

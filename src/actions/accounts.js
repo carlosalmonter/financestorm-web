@@ -28,7 +28,6 @@ export const accountsActions = {
       .then(data => dispatch(accountsFetchCompleted(data)))
       .catch((err) => {
         dispatch(accountsFetchFailed(err));
-        throw err;
       });
   },
 };

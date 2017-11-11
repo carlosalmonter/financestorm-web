@@ -16,6 +16,7 @@ const initialState = {
   accessToken: config.EMPTY_STRING,
   isLogin: false,
   isError: false,
+  error: config.EMPTY_STRING,
 };
 
 const users = (currentState = initialState, action) => {
@@ -27,6 +28,7 @@ const users = (currentState = initialState, action) => {
         accessToken: config.EMPTY_STRING,
         isLogin: true,
         isError: false,
+        error: config.EMPTY_STRING,
       };
     case USER_LOGIN_COMPLETED:
       return {
@@ -35,6 +37,7 @@ const users = (currentState = initialState, action) => {
         accessToken: action.payload.token,
         isLogin: false,
         isError: false,
+        error: config.EMPTY_STRING,
       };
     case USER_LOGIN_FAILED:
       return {
@@ -43,6 +46,7 @@ const users = (currentState = initialState, action) => {
         accessToken: config.EMPTY_STRING,
         isLogin: false,
         isError: true,
+        error: action.payload.error,
       };
     case USER_LOGOUT_COMPLETED:
       return {
@@ -51,6 +55,7 @@ const users = (currentState = initialState, action) => {
         accessToken: config.EMPTY_STRING,
         isLogin: false,
         isError: false,
+        error: config.EMPTY_STRING,
       };
     case USER_REGISTER_STARTED:
       return {
@@ -58,6 +63,7 @@ const users = (currentState = initialState, action) => {
         user: {},
         accessToken: config.EMPTY_STRING,
         isError: false,
+        error: config.EMPTY_STRING,
       };
     case USER_REGISTER_COMPLETED:
       return {
@@ -65,6 +71,7 @@ const users = (currentState = initialState, action) => {
         user: action.payload.user,
         accessToken: action.payload.token,
         isError: false,
+        error: {},
       };
     case USER_REGISTER_FAILED:
       return {
@@ -72,6 +79,7 @@ const users = (currentState = initialState, action) => {
         user: {},
         accessToken: config.EMPTY_STRING,
         isError: true,
+        error: action.payload.error,
       };
     case PERSIST_REHYDRATE:
       return {
