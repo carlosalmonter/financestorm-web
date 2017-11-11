@@ -9,7 +9,7 @@ const initAccountsFetch = () => ({
   payload: [],
 });
 
-const accountsFetchCompleted = ({data}) => ({
+const accountsFetchCompleted = ({ data }) => ({
   type: ACCOUNTS_FETCH_COMPLETED,
   payload: data,
 });
@@ -26,7 +26,7 @@ export const accountsActions = {
 
     return getUserAccounts(accessToken, userId)
       .then(data => dispatch(accountsFetchCompleted(data)))
-      .catch(err => {
+      .catch((err) => {
         dispatch(accountsFetchFailed(err));
         throw err;
       });

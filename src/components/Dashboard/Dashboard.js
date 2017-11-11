@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-import withNavigation from "../HOC/withNavigation";
+import withIsAuthToken from "../HOC/withAuthToken";
 
 class Dashboard extends Component {
   static propTypes = {
@@ -22,4 +22,4 @@ class Dashboard extends Component {
   }
 }
 
-export default withNavigation(Dashboard);
+export default withIsAuthToken(Dashboard);

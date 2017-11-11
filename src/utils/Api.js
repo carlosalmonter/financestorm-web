@@ -13,8 +13,8 @@ const post = (uri, params) => fetch(`${apiUrl}${uri}`, {
 const get = (uri, accessToken) => fetch(`${apiUrl}${uri}`, {
   headers: {
     ...config.POST_HEADERS,
-    Authorization: `Bearer ${accessToken}`
-  }
+    Authorization: `Bearer ${accessToken}`,
+  },
 })
   .then(response => response.json())
   .then(data => data);

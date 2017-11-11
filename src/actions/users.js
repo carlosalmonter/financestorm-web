@@ -15,10 +15,10 @@ const initUserLogin = () => ({
 });
 
 const userLogout = () => ({
-  type: USER_LOGOUT_COMPLETED
+  type: USER_LOGOUT_COMPLETED,
 });
 
-const userLoginCompleted = ({data}) => ({
+const userLoginCompleted = ({ data }) => ({
   type: USER_LOGIN_COMPLETED,
   payload: data,
 });
@@ -34,7 +34,7 @@ const initUserRegister = () => ({
   payload: {},
 });
 
-const userRegisterCompleted = ({data}) => ({
+const userRegisterCompleted = ({ data }) => ({
   type: USER_REGISTER_COMPLETED,
   payload: data,
 });
@@ -51,7 +51,7 @@ export const usersActions = {
 
     return login(email, password)
       .then(data => dispatch(userLoginCompleted(data)))
-      .catch(err => {
+      .catch((err) => {
         dispatch(userLoginFailed(err));
         throw err;
       });
@@ -64,7 +64,7 @@ export const usersActions = {
 
     return register(name, email, password)
       .then(data => dispatch(userRegisterCompleted(data)))
-      .catch(err => {
+      .catch((err) => {
         dispatch(userRegisterFailed(err));
         throw err;
       });

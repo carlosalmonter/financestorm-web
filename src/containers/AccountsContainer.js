@@ -5,8 +5,8 @@ import { usersActions, accountsActions } from '../actions';
 
 const mapStateToProps = ({ users, accounts }) => {
   return {
-    user: users.user.user,
-    accessToken: users.user.accessToken,
+    user: users.user,
+    accessToken: users.accessToken,
     accounts: accounts.accounts,
   }
 };
