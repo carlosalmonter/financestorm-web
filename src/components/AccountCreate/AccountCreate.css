@@ -1,0 +1,17 @@
+.accounts-create__container {
+    text-align: center;
+}
+
+.accounts-create__form {
+    display: inline-block;
+    width: 400px;
+    margin-top: 5%;
+}
+
+.accounts-create__form__row {
+    padding: 10px;
+}
+
+.accounts-create--error {
+    color: crimson;
+}

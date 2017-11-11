@@ -8,6 +8,7 @@ import LogoutContainer from '../containers/LogoutContainer';
 import RegisterContainer from '../containers/RegisterContainer';
 import DashboardContainer from '../containers/DashboardContainer';
 import AccountsContainer from '../containers/AccountsContainer';
+import AccountCreateContainer from '../containers/AccountCreateContainer';
 import store from '../store/createStore';
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
         <Route exact path="/" component={HomeContainer} />
         <Route exact path="/dashboard" component={DashboardContainer} />
         <Route exact path="/accounts" component={AccountsContainer} />
+        <Route exact path="/accounts/create" component={AccountCreateContainer} />
         <Route exact path="/login" component={LoginContainer} />
         <Route exact path="/register" component={RegisterContainer} />
         <Route exact path="/logout" component={LogoutContainer} />

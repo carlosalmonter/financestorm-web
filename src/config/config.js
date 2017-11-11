@@ -21,6 +21,15 @@ const config = {
   LOADING_ERROR_MESSAGE: 'There was an error loading the data!',
   SIGN_IN_BUTTON_TEXT: 'Sign in',
   REGISTER_IN_BUTTON_TEXT: 'Register',
+  DEFAULT_ACCOUNT_TYPE: 'savings',
+  ACCOUNT_TYPES: [
+    'checking',
+    'savings',
+    'credit card',
+    'cash',
+    'loan',
+    'other',
+  ],
 };
 
 export default config;
