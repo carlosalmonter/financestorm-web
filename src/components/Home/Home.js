@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import config from '../../config/config';
 import { Link, Redirect } from 'react-router-dom';
+import config from '../../config/config';
 
 class Home extends Component {
   static defaultProps = {

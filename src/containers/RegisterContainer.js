@@ -5,7 +5,9 @@ import { usersActions } from '../actions';
 
 const mapStateToProps = ({ users }) => users;
 const mapDispatchToProps = dispatch => ({
-  registerUser: (name, email, password) => usersActions.registerUser(dispatch, name, email, password),
+  registerUser: (name, email, password) => {
+    usersActions.registerUser(dispatch, name, email, password);
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);

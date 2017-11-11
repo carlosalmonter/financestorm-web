@@ -10,8 +10,7 @@ import DashboardContainer from '../containers/DashboardContainer';
 import AccountsContainer from '../containers/AccountsContainer';
 import store from '../store/createStore';
 
-const App = () => {
-  return (
+const App = () => (
   <Provider store={store}>
     <Main>
       <Switch>
@@ -24,6 +23,6 @@ const App = () => {
       </Switch>
     </Main>
   </Provider>
-)};
+);
 
 export default App;

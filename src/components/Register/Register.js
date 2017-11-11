@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {Paper, RaisedButton, TextField} from 'material-ui';
+import { Paper, RaisedButton, TextField } from 'material-ui';
 import { Redirect } from 'react-router-dom';
 import config from '../../config/config';
 import './Register.css';
 
 class Login extends Component {
+  static defaultProps = {
+    accessToken: config.EMPTY_STRING,
+  };
+
   static propTypes = {
-    isError: PropTypes.bool.isRequired,
     registerUser: PropTypes.func.isRequired,
     accessToken: PropTypes.string,
   };
@@ -15,15 +18,15 @@ class Login extends Component {
   state={
     name: config.EMPTY_STRING,
     email: config.EMPTY_STRING,
-    password: config.EMPTY_STRING
+    password: config.EMPTY_STRING,
   };
 
   handleNameInputChanged = (event) => {
     this.setState(
       {
         ...this.state,
-        name: event.target.value
-      }
+        name: event.target.value,
+      },
     );
   };
 
@@ -31,8 +34,8 @@ class Login extends Component {
     this.setState(
       {
         ...this.state,
-        email: event.target.value
-      }
+        email: event.target.value,
+      },
     );
   };
 
@@ -40,8 +43,8 @@ class Login extends Component {
     this.setState(
       {
         ...this.state,
-        password: event.target.value
-      }
+        password: event.target.value,
+      },
     );
   };
 
@@ -50,7 +53,7 @@ class Login extends Component {
   };
 
   render() {
-    const { isError, accessToken } = this.props;
+    const { accessToken } = this.props;
     return (
       <div className="register">
         <div className="register__container">

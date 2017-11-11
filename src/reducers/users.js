@@ -1,3 +1,4 @@
+import * as _ from 'lodash';
 import {
   USER_LOGIN_STARTED,
   USER_LOGIN_COMPLETED,
@@ -6,10 +7,9 @@ import {
   USER_REGISTER_STARTED,
   USER_REGISTER_COMPLETED,
   USER_REGISTER_FAILED,
-  PERSIST_REHYDRATE
+  PERSIST_REHYDRATE,
 } from '../actions/users';
 import config from '../config/config';
-import * as _ from "lodash";
 
 const initialState = {
   user: {},

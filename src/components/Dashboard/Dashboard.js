@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
-import withIsAuthToken from "../HOC/withAuthToken";
+import withIsAuthToken from '../HOC/withAuthToken';
 
 class Dashboard extends Component {
-  static propTypes = {
-    isLogin: PropTypes.bool.isRequired,
-    isLoginError: PropTypes.bool.isRequired,
-    loginUser: PropTypes.func.isRequired,
-  };
+  componentDidMount() {
+  }
 
   render() {
-    const { isLogin, isLoginSuccess, isLoginError, accessToken } = this.props;
     return (
       <div>
         <div className="dashboard__container">

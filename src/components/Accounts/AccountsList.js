@@ -1,10 +1,11 @@
 import React from 'react';
-import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from "material-ui";
-import withLoading from "../HOC/withLoading";
+import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui';
+import PropTypes from 'prop-types';
+import withLoading from '../HOC/withLoading';
 
 const AccountsList = ({ accountsData }) => (
   <div className="accounts__list">
-    <Table selectable={true}>
+    <Table selectable>
       <TableHeader>
         <TableRow>
           <TableHeaderColumn>Name</TableHeaderColumn>
@@ -24,5 +25,13 @@ const AccountsList = ({ accountsData }) => (
     </Table>
   </div>
 );
+
+AccountsList.propTypes = {
+  accountsData: PropTypes.arrayOf(PropTypes.object),
+};
+
+AccountsList.defaultProps = {
+  accountsData: [],
+};
 
 export default withLoading(AccountsList);

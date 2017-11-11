@@ -1,28 +1,31 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {Paper, RaisedButton, TextField} from 'material-ui';
+import { Paper, RaisedButton, TextField } from 'material-ui';
 import { Redirect } from 'react-router-dom';
 import config from '../../config/config';
 import './Login.css';
 
 class Login extends Component {
+  static defaultProps = {
+    accessToken: config.EMPTY_STRING,
+  };
+
   static propTypes = {
-    isLogin: PropTypes.bool.isRequired,
-    isLoginError: PropTypes.bool.isRequired,
+    accessToken: PropTypes.string,
     loginUser: PropTypes.func.isRequired,
   };
 
   state={
     email: config.EMPTY_STRING,
-    password: config.EMPTY_STRING
+    password: config.EMPTY_STRING,
   };
 
   handleEmailInputChanged = (event) => {
     this.setState(
       {
         ...this.state,
-        email: event.target.value
-      }
+        email: event.target.value,
+      },
     );
   };
 
@@ -30,8 +33,8 @@ class Login extends Component {
     this.setState(
       {
         ...this.state,
-        password: event.target.value
-      }
+        password: event.target.value,
+      },
     );
   };
 
@@ -40,7 +43,7 @@ class Login extends Component {
   };
 
   render() {
-    const { isLogin, isLoginError, accessToken } = this.props;
+    const { accessToken } = this.props;
     return (
       <div className="login">
         <div className="login__container">
