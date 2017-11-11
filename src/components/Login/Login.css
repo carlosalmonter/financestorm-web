@@ -1,0 +1,9 @@
+.login {
+    margin-top: 20%;
+    text-align: center;
+}
+
+.login__container {
+    display: inline-block;
+    width: 400px;
+}
