@@ -51,9 +51,18 @@ export const createUserAccount = (accessToken, userId, name, type) => (
   postAuthorized(`users/${userId}/accounts`, accessToken, { name, type })
 );
 
+export const getUserTransactions = (accessToken, userId) => getAuthorized(`users/${userId}/transactions`, accessToken);
+
+export const createUserTransaction = (accessToken, userId, params) => (
+
+  postAuthorized(`users/${userId}/transactions`, accessToken, params)
+);
+
 export default {
   login,
   register,
   getUserAccounts,
   createUserAccount,
+  getUserTransactions,
+  createUserTransaction,
 };

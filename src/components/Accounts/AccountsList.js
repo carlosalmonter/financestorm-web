@@ -2,14 +2,18 @@ import React from 'react';
 import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui';
 import PropTypes from 'prop-types';
 import withLoading from '../HOC/withLoading';
+import config from '../../config/config';
 
 const AccountsList = ({ accountsData }) => (
   <div className="accounts__list">
     <Table selectable>
       <TableHeader>
         <TableRow>
-          <TableHeaderColumn>Name</TableHeaderColumn>
-          <TableHeaderColumn>Balance</TableHeaderColumn>
+          {
+            config.ACCOUNTS_LIST_COLUMNS.map(columnName => (
+              <TableHeaderColumn key={columnName}>{columnName}</TableHeaderColumn>
+            ))
+          }
         </TableRow>
       </TableHeader>
       <TableBody>

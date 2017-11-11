@@ -20,7 +20,7 @@ const AccountForm = ({
       </div>
       <div className="accounts-create__form__row">
         <SelectField
-          floatingLabelText="Search For:"
+          floatingLabelText="Account Type:"
           value={accountType}
           onChange={onAccountTypeChange}
         >
