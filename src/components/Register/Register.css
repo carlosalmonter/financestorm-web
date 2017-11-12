@@ -1,0 +1,13 @@
+.register {
+    margin-top: 20%;
+    text-align: center;
+}
+
+.register__container {
+    display: inline-block;
+    width: 400px;
+}
+
+.register--error {
+    color: crimson;
+}
