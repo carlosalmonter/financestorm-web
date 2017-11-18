@@ -1,4 +1,4 @@
-# FinanceStorm API
+# FinanceStorm WEB
 
 An app based on React to track your personal finance.
 
