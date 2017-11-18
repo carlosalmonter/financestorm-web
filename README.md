@@ -4,10 +4,10 @@ An app based on React to track your personal finance.
 
 ## Table of Contents
 
-- [Getting Started](#Getting Started)
+- [Getting Started](#Getting_Started)
 - [Usage](#Usage)
 - [Stack](#Stack)
-- [Upcoming Work](#Upcoming Work)
+- [Upcoming Work](#Upcoming_Work)
 
 ## Getting Started
 
