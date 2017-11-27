@@ -11,10 +11,6 @@ An app based on React to track your personal finance.
 
 ## Getting Started
 
-### Prerequisites
-
-- Setup and start the api from https://bitbucket.org/carlosalmonter/financestorm-api
-
 ### Installation
 
 - Run docker-compose up

@@ -1,7 +1,7 @@
 import colors from './colors';
 
 const config = {
-  API_URL: 'http://localhost:8080/api/',
+  API_URL: 'https://financestorm-api.herokuapp.com/api/',
   POST_HEADERS: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
